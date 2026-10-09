@@ -356,4 +356,285 @@
         @keyframes pulse-glow {
             0% {
                 transform: scale(1);
-                box-shadow:
+                box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.6);
+            }
+            70% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 16px rgba(0, 255, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 255, 102, 0);
+            }
+        }
+
+        .btn-cta-main:hover, .btn-cta-main:focus {
+            background-color: var(--accent-green-hover);
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .btn-decline {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.4;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+            max-width: 90%;
+        }
+
+        .btn-decline:hover {
+            color: var(--text-secondary);
+        }
+
+        /* Garantia */
+        .guarantee-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .guarantee-icon {
+            font-size: 2.25rem;
+            flex-shrink: 0;
+        }
+
+        .guarantee-content h4 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            font-weight: 800;
+        }
+
+        .guarantee-content p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: underline;
+        }
+
+        /* ==========================================================================
+           6. AJUSTES PARA TELAS MAIORES (DESKTOP/TABLET)
+           ========================================================================== */
+        @media (min-width: 640px) {
+            body {
+                font-size: 1.1875rem; /* ~19px no Desktop para leitura super fluida */
+                padding-top: 32px;
+            }
+
+            .main-headline {
+                font-size: 2.25rem;
+            }
+
+            .sub-headline {
+                font-size: 1.25rem;
+            }
+
+            .tsl-block {
+                padding: 36px 32px;
+            }
+
+            .price-main {
+                font-size: 3.75rem;
+            }
+
+            .btn-cta-main {
+                font-size: 1.375rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ALERTA DE TOPO (URGÊNCIA/CHECKOUT) -->
+        <div class="top-alert">
+            ⚠️ ESPERE! A SUA ENCOMENDA AINDA NÃO FOI CONCLUÍDA. NÃO FECHE ESTA PÁGINA.
+        </div>
+
+        <!-- ==========================================================================
+           SEÇÃO 1: HEADLINE PRINCIPAL (O GANCHO COM DESTAQUES DE IMPACTO)
+           ========================================================================== -->
+        <header class="headline-section">
+            <h1 class="main-headline">
+                Espere! A sua encomenda do Protocolo Xô Bigode Chinês está quase a ser concluída...
+            </h1>
+            
+            <p class="sub-headline">
+                Mas antes de avançar, preciso de ser totalmente transparente contigo: <span class="hl-yellow">APENAS O PROTOCOLO PRINCIPAL NÃO BASTA.</span>
+            </p>
+        </header>
+
+        <!-- ESPAÇO ESTRATÉGICO DE MÍDIA #1 (LOGO APÓS A HEADLINE PRINCIPAL) -->
+        <!-- Substitua pelo caminho da sua imagem em: /assets/img/mockup-principal.png -->
+        <div class="media-placeholder featured">
+            <span class="media-label">📷 ESPAÇO ESTRATÉGICO #1 (OBRIGATÓRIO)</span>
+            <div class="media-title">Insira aqui a Foto/Mockup do Produto "O Truque da Colher Japonesa" ou Vídeo de Vendas</div>
+            <!-- Exemplo de como usar a imagem quando você colocar na pasta: -->
+            <!-- <img src="assets/img/mockup-colher-japonesa.png" alt="O Truque da Colher Japonesa" loading="lazy"> -->
+        </div>
+
+        <!-- ==========================================================================
+           SEÇÃO 2: A AGONIA & O INIMIGO COMUM (COPY DE ALTA PERSUASÃO)
+           ========================================================================== -->
+        <div class="tsl-block">
+            <p>
+                Se o teu objetivo real é <span class="hl-green"><span class="power-word">REJUVENESCER ATÉ 10 ANOS</span> EM APENAS 15 DIAS</span>, eliminar o inchaço matinal e devolver a <span class="power-word-yellow">FIRMEZA ABSOLUTA</span> ao teu rosto, tu precisas de dar o próximo passo. E eu descobri exatamente como fazer isso.
+            </p>
+
+            <p>
+                Durante anos, ao acompanhar centenas de mulheres, eu percebi um padrão frustrante: muitas começavam os exercícios faciais com toda a energia, mas viam os resultados a demorar semanas a aparecer.
+            </p>
+
+            <p>
+                Sabe porquê? Porque elas <span class="hl-purple">aplicavam a pressão errada</span>, faziam os movimentos sem o suporte adequado e acumulavam retenção de líquidos na zona da mandíbula e do bigode chinês que <span class="power-word">BLOQUEAVA</span> qualquer evolução muscular.
+            </p>
+
+            <p>
+                Sentires que estás a esforçar-te à frente do espelho, mas que o resultado não acompanha a velocidade que desejas, é desesperante. Parecia que faltava uma <span class="hl-yellow">"CHAVE SECRETA"</span> para destravar o processo.
+            </p>
+        </div>
+
+        <!-- ESPAÇO ESTRATÉGICO DE MÍDIA #2 (ILUSTRAÇÃO DA DOR OU TÉCNICA) -->
+        <div class="media-placeholder">
+            <span class="media-label">📷 ESPAÇO ESTRATÉGICO #2</span>
+            <div class="media-title">Insira aqui Foto de Antes/Depois, Comparativo de Técnica Incorreta x Correta ou GIF Ilustrativo</div>
+        </div>
+
+        <!-- ==========================================================================
+           SEÇÃO 3: A VISÃO & A SOLUÇÃO (PROMESSA DE TRANSFORMAÇÃO EM 7X)
+           ========================================================================== -->
+        <div class="tsl-block">
+            <p>
+                Foi após anos de estudo intensivo, testes e pesquisas sobre técnicas milenares orientais de escultura facial que eu decidi desvendar este mistério.
+            </p>
+
+            <p>
+                Eu queria algo simples, que qualquer mulher pudesse fazer na sua própria casa de banho, sem gastar fortunas em clínicas de estética em Lisboa ou no Porto.
+            </p>
+
+            <p style="text-align: center; font-size: 1.375rem; font-weight: 900; color: var(--accent-green); margin: 28px 0;">
+                ✨ FOI ASSIM QUE NASCEU: <br>
+                <span class="hl-green" style="font-size: 1.5rem; display: inline-block; margin-top: 8px;">"O TRUQUE DA COLHER JAPONESA"</span>
+            </p>
+
+            <!-- ESPAÇO ESTRATÉGICO DE MÍDIA #3 (DEMONSTRAÇÃO DO PRODUTO/AULA) -->
+            <div class="media-placeholder">
+                <span class="media-label">📷 ESPAÇO ESTRATÉGICO #3</span>
+                <div class="media-title">Insira aqui Imagem do Curso por Dentro / Demonstração do Vídeo da Colher Japonesa</div>
+            </div>
+
+            <p>
+                Não é apenas um e-book qualquer. É uma <span class="hl-purple">MASTERCLASS EXCLUSIVA</span> onde <span class="power-word-yellow">EU PEGO LITERAMENTE NA TUA MÃO</span>, através de vídeos de alta definição em ângulo milimétrico, e te ensino o passo a passo exato.
+            </p>
+
+            <p>
+                Este truque milenar utiliza a termodinâmica do metal combinada com o fluxo linfático profundo para <span class="hl-green"><span class="power-word">IMPULSIONAR OS TEUS RESULTADOS EM ATÉ 7X MAIS RÁPIDO</span></span>.
+            </p>
+
+            <p>
+                Imagina acordar pela manhã, ir à casa de banho, pegar em duas simples colheres e, em <span class="hl-yellow">MENOS DE 3 MINUTOS</span>, ver o teu contorno facial a desenhar-se e a pele a <span class="power-word">ESTICAR VISIVELMENTE</span> diante dos teus olhos. É exatamente isso que vais desbloquear hoje.
+            </p>
+
+            <!-- LISTA DE TRANSFORMAÇÕES/O QUE ELA VAI RECEBER -->
+            <ul class="benefit-card-list">
+                <li>
+                    <span class="benefit-icon">✓</span>
+                    <div><strong>AULA PASSO A PASSO EM VÍDEO:</strong> Veja de perto a pressão e os ângulos exatos para não errar.</div>
+                </li>
+                <li>
+                    <span class="benefit-icon">✓</span>
+                    <div><strong>DRENAGEM EXPRESS DE 3 MINUTOS:</strong> Elimine o inchaço matinal das pálpebras e bochechas instantaneamente.</div>
+                </li>
+                <li>
+                    <span class="benefit-icon">✓</span>
+                    <div><strong>EFEITO LIFTING IMEDIATO:</strong> Ative a circulação profunda e potencialize o efeito do seu protocolo em até 7x.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ==========================================================================
+           SEÇÃO 4: PREÇO & OFERTA IRRESISTÍVEL (29€)
+           ========================================================================== -->
+        <div class="pricing-section">
+            <div class="pricing-badge">OFERTA ÚNICA DE CONFIRMAÇÃO</div>
+            
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 8px;">
+                Nas clínicas especializadas, uma única sessão de drenagem modeladora e escultura facial custa facilmente entre 45€ e 80€.
+            </p>
+
+            <div class="price-old">De R$ 197,00 por apenas</div>
+            <div class="price-main">29<span>€</span></div>
+            <div class="price-subtext">Pagamento único • Acesso Imediato e Vitalício</div>
+
+            <p style="color: var(--highlight-yellow-text); font-size: 0.875rem; font-weight: 700; margin-top: 12px;">
+                ⚠️ ESTA OPORTUNIDADE NÃO ESTARÁ DISPONÍVEL POSTERIORMENTE.
+            </p>
+        </div>
+
+        <!-- ==========================================================================
+           SEÇÃO 5: BOTÕES DE AÇÃO (CTA PRINCIPAL ANIMADO + LINK DE RECUSA)
+           ========================================================================== -->
+        <div class="cta-container">
+            <!-- Botão Principal com Link Real -->
+            <a href="https://SEU-CHECKOUT-AQUI.com/upsell-colher-japonesa" class="btn-cta-main">
+                SIM! QUERO ADICIONAR O TRUQUE DA COLHER JAPONESA E IMPULSIONAR OS MEUS RESULTADOS EM 7X POR APENAS 29€
+            </a>
+
+            <!-- Link de Saída / Recusa Otimizado -->
+            <div>
+                <a href="https://SEU-CHECKOUT-AQUI.com/pagina-obrigado-ou-downsell" class="btn-decline">
+                    Não, obrigado. Prefiro continuar a tentar obter resultados sozinha, sem o método avançado de aceleração em 7x e sem o acompanhamento passo a passo.
+                </a>
+            </div>
+        </div>
+
+        <!-- ESPAÇO ESTRATÉGICO DE MÍDIA #4 (PROVA SOCIAL OU SELOS DE SEGURANÇA) -->
+        <div class="media-placeholder">
+            <span class="media-label">📷 ESPAÇO ESTRATÉGICO #4</span>
+            <div class="media-title">Insira aqui Imagem de Depoimentos de Alunas / Print de Resultados do WhatsApp</div>
+        </div>
+
+        <!-- GARANTIA -->
+        <div class="guarantee-card">
+            <div class="guarantee-icon">🛡️</div>
+            <div class="guarantee-content">
+                <h4>Garantia Incondicional de 7 Dias</h4>
+                <p>Experimente a Masterclass por 7 dias. Se sentir que a técnica não acelerou os seus resultados, reembolsamos 100% do seu dinheiro sem perguntas.</p>
+            </div>
+        </div>
+
+        <!-- RODAPÉ -->
+        <footer>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Todos os direitos reservados.</p>
+            <p style="margin-top: 8px;">
+                <a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
