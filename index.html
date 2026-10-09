@@ -1,531 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Oferta Exclusiva de Upsell">
-    <title>Oferta Especial Exclusiva</title>
-    <style>
-        /* ==========================================================================
-           1. VARIÁVEIS DE DESIGN E CONFIGURAÇÕES RÁPIDAS
-           ========================================================================== */
-        :root {
-            /* Cores */
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --bg-card: #1c1c1e;
-            --border-color: #2c2c2e;
-            
-            --text-primary: #ffffff;
-            --text-secondary: #a1a1a6;
-            --text-muted: #6e6e73;
-            
-            /* Destaque / Tráfego Pago (Verde Elétrico / Limão) */
-            --accent-color: #00ff66;
-            --accent-hover: #00cc52;
-            --accent-glow: rgba(0, 255, 102, 0.15);
-            
-            /* Alertas / Preço */
-            --warning-color: #ff9500;
-            --strike-color: #ff3b30;
-
-            /* Tipografia */
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            
-            /* Dimensões */
-            --container-max-width: 720px;
-            --border-radius: 12px;
-        }
-
-        /* ==========================================================================
-           2. RESET E ESTILOS BASE
-           ========================================================================== */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: var(--font-family);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            padding: 20px 16px 40px 16px;
-        }
-
-        .container {
-            max-width: var(--container-max-width);
-            margin: 0 auto;
-        }
-
-        /* ==========================================================================
-           3. CABEÇALHO / ALERTA DE BARRA SUPERIOR
-           ========================================================================== */
-        .alert-bar {
-            background-color: rgba(255, 149, 0, 0.1);
-            border: 1px solid var(--warning-color);
-            color: var(--warning-color);
-            text-align: center;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-        }
-
-        /* ==========================================================================
-           4. HEADLINE & SUBHEADLINE
-           ========================================================================== */
-        .header-section {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .headline {
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1.25;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .headline highlight {
-            color: var(--accent-color);
-            background: none;
-        }
-
-        .subheadline {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            line-height: 1.5;
-            max-width: 640px;
-            margin: 0 auto;
-        }
-
-        /* ==========================================================================
-           5. CONTAINER DE VÍDEO (RESPONSIVO 16:9)
-           ========================================================================== */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            background-color: var(--bg-secondary);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            margin-bottom: 32px;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* ==========================================================================
-           6. SEÇÕES DE TEXTO DE VENDAS (TSL / COPY)
-           ========================================================================== */
-        .tsl-content {
-            background-color: var(--bg-secondary);
-            border-radius: var(--border-radius);
-            padding: 32px 24px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 32px;
-        }
-
-        .tsl-content h2 {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            font-weight: 700;
-        }
-
-        .tsl-content p {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-size: 1rem;
-        }
-
-        .tsl-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .benefit-list {
-            list-style: none;
-            margin: 24px 0;
-        }
-
-        .benefit-list li {
-            position: relative;
-            padding-left: 32px;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-            font-size: 1rem;
-        }
-
-        .benefit-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .product-image-container {
-            text-align: center;
-            margin: 24px 0;
-        }
-
-        .product-image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        /* ==========================================================================
-           7. BLUDO DE PREÇO E OFERTA
-           ========================================================================== */
-        .pricing-card {
-            background-color: var(--bg-card);
-            border: 2px solid var(--accent-color);
-            border-radius: var(--border-radius);
-            padding: 32px 24px;
-            text-align: center;
-            margin-bottom: 24px;
-            position: relative;
-            box-shadow: 0 0 24px var(--accent-glow);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--accent-color);
-            color: #000;
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 4px 16px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .price-old {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            text-decoration: line-through;
-            margin-bottom: 4px;
-        }
-
-        .price-current {
-            font-size: 2.75rem;
-            font-weight: 900;
-            color: var(--text-primary);
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .price-current span {
-            color: var(--accent-color);
-        }
-
-        .price-conditions {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-        }
-
-        /* ==========================================================================
-           8. BOTÃO DE COMPRA (CTA) & LINK DE RECUSA
-           ========================================================================== */
-        .action-area {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .cta-button {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-color);
-            color: #000000;
-            font-size: 1.25rem;
-            font-weight: 800;
-            text-decoration: none;
-            padding: 20px 24px;
-            border-radius: var(--border-radius);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 6px 20px var(--accent-glow);
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover, .cta-button:focus {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(0, 255, 102, 0.3);
-            outline: none;
-        }
-
-        .cta-button:active {
-            transform: translateY(0);
-        }
-
-        .decline-link {
-            display: inline-block;
-            margin-top: 16px;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            text-decoration: underline;
-            transition: color 0.2s ease;
-        }
-
-        .decline-link:hover {
-            color: var(--text-secondary);
-        }
-
-        /* ==========================================================================
-           9. PROVA SOCIAL & GARANTIA
-           ========================================================================== */
-        .guarantee-box {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: var(--border-radius);
-            margin-bottom: 32px;
-        }
-
-        .guarantee-icon {
-            font-size: 2.5rem;
-            line-height: 1;
-            flex-shrink: 0;
-        }
-
-        .guarantee-text h4 {
-            font-size: 1rem;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .guarantee-text p {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-        }
-
-        .testimonials-section {
-            margin-bottom: 32px;
-        }
-
-        .testimonials-section h3 {
-            text-align: center;
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .testimonial-card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 16px 20px;
-            border-radius: var(--border-radius);
-            margin-bottom: 12px;
-        }
-
-        .testimonial-card p {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-bottom: 8px;
-        }
-
-        .testimonial-author {
-            font-size: 0.8125rem;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-style: normal;
-        }
-
-        /* ==========================================================================
-           10. RODAPÉ
-           ========================================================================== */
-        footer {
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            padding-top: 24px;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: underline;
-        }
-
-        /* ==========================================================================
-           11. MEDIA QUERIES (DESKTOP & TABLETS)
-           ========================================================================== */
-        @media (min-width: 640px) {
-            body {
-                padding-top: 40px;
-                padding-bottom: 60px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta Especial Exclusiva - O Truque da Colher Japonesa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#7C3AED',
+              purpleHover: '#6D28D9',
+              purpleLight: '#F3E8FF',
+              green: '#10B981',
+              greenHover: '#059669',
             }
-
-            .headline {
-                font-size: 2.5rem;
-            }
-
-            .subheadline {
-                font-size: 1.25rem;
-            }
-
-            .tsl-content {
-                padding: 40px 32px;
-            }
-
-            .pricing-card {
-                padding: 40px 32px;
-            }
-
-            .price-current {
-                font-size: 3.25rem;
-            }
+          }
         }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    @keyframes pulse-slow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    .cta-btn {
+      animation: pulse-slow 2.5s infinite ease-in-out;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased selection:bg-purple-200">
 
-    <div class="container">
+  <!-- 1. O Gancho - Banner Superior -->
+  <header class="bg-brand-purple text-white py-3.5 px-4 text-center text-sm sm:text-base font-bold shadow-md tracking-wide">
+    ⚠️ ESPERE! A sua encomenda do Protocolo Xô Bigode Chinês está quase a ser concluída...
+  </header>
 
-        <!-- ALERTA SUPERIOR -->
-        <div class="alert-bar">
-            ⚠️ ESPERE! Sua compra ainda não está concluída. Não feche esta página.
+  <main class="max-w-2xl mx-auto px-4 py-8 sm:py-12 space-y-8">
+
+    <!-- Card Principal da TSL -->
+    <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-purple-100 space-y-8">
+      
+      <!-- Cabeçalho / Sub-Gancho -->
+      <header class="text-center space-y-4">
+        <span class="inline-block bg-brand-purpleLight text-brand-purple text-xs sm:text-sm font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border border-purple-200">
+          Aviso Importante do Pedido
+        </span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+          Mas antes de avançar, preciso de ser totalmente transparente contigo: <span class="text-brand-purple underline decoration-purple-300">apenas o protocolo principal não basta.</span>
+        </h1>
+      </header>
+
+      <!-- Promessa Principal -->
+      <div class="bg-purple-50 rounded-2xl p-5 border-l-4 border-brand-purple text-slate-700 text-base sm:text-lg leading-relaxed">
+        Se o teu objetivo real é <strong>rejuvenescer até 10 anos em apenas 15 dias</strong>, eliminar o inchaço matinal e devolver a firmeza absoluta ao teu rosto, tu precisas de dar o próximo passo. E eu descobri exatamente como fazer isso.
+      </div>
+
+      <hr class="border-slate-100">
+
+      <!-- 2. A Agonia (The Agony) -->
+      <section class="space-y-4 text-slate-700 leading-relaxed text-base sm:text-lg">
+        <p>
+          Durante anos, ao acompanhar centenas de mulheres, eu percebi um padrão frustrante: muitas começavam os exercícios faciais com toda a energia, mas viam os resultados a demorar semanas a aparecer.
+        </p>
+        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
+          <p class="font-bold text-slate-900">Sabe porquê?</p>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Porque elas aplicavam a pressão errada, faziam os movimentos sem o suporte adequado e acumulavam retenção de líquidos na zona da mandíbula e do bigode chinês que bloqueava qualquer evolução muscular.
+          </p>
+        </div>
+        <p class="text-slate-800 font-medium italic">
+          Sentires que estás a esforçar-te à frente do espelho, mas que o resultado não acompanha a velocidade que desejas, é desesperante. Parecia que faltava uma "chave secreta" para destravar o processo.
+        </p>
+      </section>
+
+      <hr class="border-slate-100">
+
+      <!-- 3. A Visão (The Vision) -->
+      <section class="space-y-5 text-slate-700 leading-relaxed text-base sm:text-lg">
+        <p>
+          Foi após anos de estudo intensivo, testes laboratoriais caseiros e viagens de pesquisa sobre técnicas milenares orientais de escultura facial que eu decidi desvendar este mistério.
+        </p>
+        <p>
+          Eu queria algo simples, que qualquer mulher pudesse fazer na sua própria casa de banho, sem gastar fortunas em clínicas de estética em Lisboa ou no Porto.
+        </p>
+        
+        <!-- Destaque do Produto -->
+        <div class="bg-gradient-to-br from-purple-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-lg text-center space-y-4">
+          <span class="text-xs uppercase tracking-widest text-purple-300 font-bold">A Revelação</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">
+            "O Truque da Colher Japonesa"
+          </h2>
+          <p class="text-purple-100 text-sm sm:text-base leading-relaxed">
+            Não é apenas um e-book qualquer. É uma <strong>masterclass exclusiva</strong> onde eu pego literalmente na tua mão, através de vídeos de alta definição em ângulo milimétrico, e te ensino o passo a passo exato.
+          </p>
+          <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm text-xs sm:text-sm text-purple-200">
+            ✨ Utiliza a <strong>termodinâmica do metal</strong> combinada com o <strong>fluxo linfático profundo</strong> para impulsionar os teus resultados em até <span class="text-emerald-400 font-bold">7x mais rápido</span>.
+          </div>
         </div>
 
-        <!-- CABEÇALHO / HEADLINE -->
-        <header class="header-section">
-            <h1 class="headline">
-                Acelere seus resultados em até 3x adicionando o <highlight>[NOME DO PRODUTO UPSELL]</highlight> à sua ordem agora mesmo
-            </h1>
-            <p class="subheadline">
-                Esta é uma oportunidade única e exclusiva apresentada apenas nesta página. Ela não estará disponível posteriormente.
-            </p>
-        </header>
+        <p class="text-slate-800 font-medium">
+          Imagina acordar pela manhã, ir à casa de banho, pegar em duas simples colheres e, em menos de 3 minutos, ver o teu contorno facial a desenhar-se e a pele a esticar visivelmente diante dos teus olhos. É exatamente isso que vais desbloquear hoje.
+        </p>
+      </section>
 
-        <!-- VÍDEO DE VENDAS (OPCIONAL - SUBSTUÍVEL OU REMOVÍVEL) -->
-        <section class="video-container">
-            <!-- Insira a URL de Embed do seu player (YouTube, Vimeo, Vturb, Wistia, etc) -->
-            <iframe 
-                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
-                title="Vídeo de Vendas" 
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </section>
+      <hr class="border-slate-100">
 
-        <!-- CORPO DA COPY / TSL -->
-        <section class="tsl-content">
-            <h2>Parabéns pela sua decisão inicial!</h2>
-            <p>
-                Sua compra principal já foi confirmada e está sendo processada. No entanto, antes de enviar seus dados de acesso, preparamos algo especial para ajudar você a alcançar [OBJETIVO PRINCIPAL] de forma muito mais rápida e sem [PRINCIPAL OBJEÇÃO OU DOR].
-            </p>
+      <!-- 4. A Oferta e o Valor Exclusivo -->
+      <section class="bg-purple-50 rounded-2xl p-6 sm:p-8 text-center space-y-4 border border-purple-100">
+        <p class="text-slate-600 text-sm sm:text-base">
+          Nas clínicas especializadas, uma única sessão de drenagem modeladora e escultura facial custa facilmente entre <span class="line-through text-slate-400">45€ e 80€</span>.
+        </p>
+        <p class="text-slate-800 font-semibold text-sm sm:text-base">
+          No entanto, como já demonstraste compromisso ao adquirir o teu protocolo principal hoje, eu não vou cobrar-te esse valor.
+        </p>
+        <div class="py-2">
+          <p class="text-xs text-brand-purple font-extrabold uppercase tracking-wider">Pagamento Único • Acesso Imediato</p>
+          <div class="text-4xl sm:text-5xl font-black text-slate-900 mt-1">
+            29€
+          </div>
+          <p class="text-xs text-slate-500 mt-1">Disponível apenas nesta página de confirmação.</p>
+        </div>
+      </section>
 
-            <div class="product-image-container">
-                <!-- Espaço reservado para Imagem/Mockup do Produto -->
-                <img src="https://via.placeholder.com/600x350/1c1c1e/a1a1a6?text=MOCKUP+DO+PRODUTO+UPSELL" alt="Mockup do Produto Complementar" loading="lazy">
-            </div>
+      <!-- 5. Ação - Botões de Conversão -->
+      <section class="space-y-4 text-center pt-2">
+        <a href="#LINK_DO_CHECKOUT_UPSELL" class="cta-btn inline-block w-full py-5 px-6 bg-brand-green hover:bg-brand-greenHover text-white font-black text-base sm:text-xl rounded-2xl shadow-xl shadow-emerald-500/25 transition-all duration-200 uppercase tracking-wide leading-tight">
+          SIM! QUERO ADICIONAR O TRUQUE DA COLHER JAPONESA E IMPULSIONAR OS MEUS RESULTADOS EM 7X POR APENAS 29€
+        </a>
+        <p class="text-xs text-slate-500 font-medium">
+          🔒 Adicionar com 1 clique à minha encomenda atual
+        </p>
 
-            <p>
-                O <strong>[NOME DO PRODUTO UPSELL]</strong> foi desenvolvido especificamente para se conectar ao produto que você acabou de adquirir. Com ele, você terá acesso imediato a:
-            </p>
+        <!-- Link Subtil de Rejeição -->
+        <div class="pt-4">
+          <a href="#LINK_RECUSAR" class="inline-block text-xs sm:text-sm text-slate-400 hover:text-slate-600 underline transition-colors max-w-md leading-snug">
+            Não, obrigado. Prefiro continuar a tentar obter resultados sozinha, sem o método avançado de aceleração em 7x e sem o acompanhamento passo a passo.
+          </a>
+        </div>
+      </section>
 
-            <ul class="benefit-list">
-                <li><strong>[BENEFÍCIO 1]:</strong> Descrição clara de como este benefício economiza tempo ou esforço.</li>
-                <li><strong>[BENEFÍCIO 2]:</strong> Explicação do resultado prático direto na rotina do comprador.</li>
-                <li><strong>[BENEFÍCIO 3]:</strong> Ferramenta, modelo ou método pronto para aplicação imediata.</li>
-                <li><strong>[BENEFÍCIO 4]:</strong> Acesso exclusivo a uma condição que não existe no catálogo público.</li>
-            </ul>
+    </article>
 
-            <p>
-                Adicionando este complemento agora, você evita [PROBLEMA COMUM QUE OCORRE SEM O UPSELL] e garante que sua jornada seja simples, direta e eficiente.
-            </p>
-        </section>
+    <!-- Rodapé Minimalista -->
+    <footer class="text-center text-xs text-slate-400 space-y-2">
+      <div class="flex justify-center items-center gap-4 text-slate-500">
+        <span>🔒 Compra 100% Segura</span>
+        <span>⚡ Acesso Imediato</span>
+        <span>🛡️ Garantia Total</span>
+      </div>
+      <p>© 2026 Todos os direitos reservados.</p>
+    </footer>
 
-        <!-- BLOCO DE PREÇO -->
-        <section class="pricing-card">
-            <div class="pricing-badge">OFERTA ÚNICA DE CHECKOUT</div>
-            <div class="price-old">De R$ 297,00 por apenas</div>
-            <div class="price-current">R$ 97<span>,00</span></div>
-            <div class="price-conditions">Ou em até 12x de R$ 9,74 no cartão</div>
-        </section>
-
-        <!-- ÁREA DE AÇÃO / CTA PRINCIPAL -->
-        <section class="action-area">
-            <!-- Insira a URL do checkout com 1-click ou add-to-order real -->
-            <a href="https://SEU-CHECKOUT-AQUI.com/upsell-add" class="cta-button">
-                SIM! ADICIONAR À MINHA COMPRA AGORA
-            </a>
-
-            <!-- Link para Recusa da Oferta -->
-            <div>
-                <a href="https://SEU-CHECKOUT-AQUI.com/obrigado-ou-downsell" class="decline-link">
-                    Não, obrigado. Eu prefiro abrir mão desta oportunidade e seguir apenas com a compra inicial.
-                </a>
-            </div>
-        </section>
-
-        <!-- GARANTIA -->
-        <section class="guarantee-box">
-            <div class="guarantee-icon">🛡️</div>
-            <div class="guarantee-text">
-                <h4>Garantia Incondicional de 7 Dias</h4>
-                <p>Sua compra adicional está 100% protegida. Se por qualquer motivo você achar que o produto não atendeu às suas expectativas, basta solicitar o reembolso total dentro do prazo.</p>
-            </div>
-        </section>
-
-        <!-- PROVA SOCIAL / DEPOIMENTOS (OPCIONAL) -->
-        <section class="testimonials-section">
-            <h3>Quem já adicionou aprovou:</h3>
-            
-            <div class="testimonial-card">
-                <p>"Adicionar este complemento foi a melhor decisão. Consegui aplicar tudo no mesmo dia sem complicações."</p>
-                <div class="testimonial-author">— Cliente Verificado</div>
-            </div>
-
-            <div class="testimonial-card">
-                <p>"O produto principal é ótimo, mas este acelerador economizou semanas do meu tempo."</p>
-                <div class="testimonial-author">— Cliente Verificado</div>
-            </div>
-        </section>
-
-        <!-- RODAPÉ -->
-        <footer>
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Todos os direitos reservados.</p>
-            <p style="margin-top: 8px;">
-                <a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a>
-            </p>
-        </footer>
-
-    </div>
+  </main>
 
 </body>
 </html>
