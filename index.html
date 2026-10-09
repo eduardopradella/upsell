@@ -1,59 +1,253 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oferta Especial Exclusiva - O Truque da Colher Japonesa</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              purple: '#7C3AED',
-              purpleHover: '#6D28D9',
-              purpleLight: '#F3E8FF',
-              green: '#10B981',
-              greenHover: '#059669',
-            }
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oferta Exclusiva de Upsell">
+    <title>Oferta Especial Exclusiva</title>
+    <style>
+        /* ==========================================================================
+           1. VARIÁVEIS DE DESIGN E CONFIGURAÇÕES RÁPIDAS
+           ========================================================================== */
+        :root {
+            /* Cores */
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-card: #1c1c1e;
+            --border-color: #2c2c2e;
+            
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1a6;
+            --text-muted: #6e6e73;
+            
+            /* Destaque / Tráfego Pago (Verde Elétrico / Limão) */
+            --accent-color: #00ff66;
+            --accent-hover: #00cc52;
+            --accent-glow: rgba(0, 255, 102, 0.15);
+            
+            /* Alertas / Preço */
+            --warning-color: #ff9500;
+            --strike-color: #ff3b30;
+
+            /* Tipografia */
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            
+            /* Dimensões */
+            --container-max-width: 720px;
+            --border-radius: 12px;
         }
-      }
-    }
-  </script>
-  <style>
-    @keyframes pulse-slow {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-    }
-    .cta-btn {
-      animation: pulse-slow 2.5s infinite ease-in-out;
-    }
-  </style>
-</head>
-<body class="bg-gray-50 text-slate-800 font-sans antialiased selection:bg-purple-200">
 
-  <!-- 1. O Gancho - Banner Superior -->
-  <header class="bg-brand-purple text-white py-3.5 px-4 text-center text-sm sm:text-base font-bold shadow-md tracking-wide">
-    ⚠️ ESPERE! A sua encomenda do Protocolo Xô Bigode Chinês está quase a ser concluída...
-  </header>
+        /* ==========================================================================
+           2. RESET E ESTILOS BASE
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <main class="max-w-2xl mx-auto px-4 py-8 sm:py-12 space-y-8">
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 20px 16px 40px 16px;
+        }
 
-    <!-- Card Principal da TSL -->
-    <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-purple-100 space-y-8">
-      
-      <!-- Cabeçalho / Sub-Gancho -->
-      <header class="text-center space-y-4">
-        <span class="inline-block bg-brand-purpleLight text-brand-purple text-xs sm:text-sm font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border border-purple-200">
-          Aviso Importante do Pedido
-        </span>
-        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
-          Mas antes de avançar, preciso de ser totalmente transparente contigo: <span class="text-brand-purple underline decoration-purple-300">apenas o protocolo principal não basta.</span>
-        </h1>
-      </header>
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
 
-      <!-- Promessa Principal -->
-      <div class="bg-purple-50 rounded-2xl p-5 border-l-4 border-brand-purple text-slate-700 text-base sm:text-lg leading-relaxed">
-        Se o teu objetivo real é <strong>rejuvenescer até 10 anos em apenas 15 dias</strong>, eliminar o inchaço matinal e devolver a firme
+        /* ==========================================================================
+           3. CABEÇALHO / ALERTA DE BARRA SUPERIOR
+           ========================================================================== */
+        .alert-bar {
+            background-color: rgba(255, 149, 0, 0.1);
+            border: 1px solid var(--warning-color);
+            color: var(--warning-color);
+            text-align: center;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        /* ==========================================================================
+           4. HEADLINE & SUBHEADLINE
+           ========================================================================== */
+        .header-section {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .headline {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .headline highlight {
+            color: var(--accent-color);
+            background: none;
+        }
+
+        .subheadline {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           5. CONTAINER DE VÍDEO (RESPONSIVO 16:9)
+           ========================================================================== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 32px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ==========================================================================
+           6. SEÇÕES DE TEXTO DE VENDAS (TSL / COPY)
+           ========================================================================== */
+        .tsl-content {
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 32px 24px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 32px;
+        }
+
+        .tsl-content h2 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .tsl-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .tsl-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .benefit-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-image-container {
+            text-align: center;
+            margin: 24px 0;
+        }
+
+        .product-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* ==========================================================================
+           7. BLUDO DE PREÇO E OFERTA
+           ========================================================================== */
+        .pricing-card {
+            background-color: var(--bg-card);
+            border: 2px solid var(--accent-color);
+            border-radius: var(--border-radius);
+            padding: 32px 24px;
+            text-align: center;
+            margin-bottom: 24px;
+            position: relative;
+            box-shadow: 0 0 24px var(--accent-glow);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-color);
+            color: #000;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-old {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+
+        .price-current {
+            font-size: 2.75rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .price-current span {
+            color: var(--accent-color);
+        }
+
+        .price-conditions {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* =================================
