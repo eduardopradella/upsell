@@ -1,640 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Oferta Exclusiva de Upsell - O Truque da Colher Japonesa">
-    <title>Oferta Exclusiva - O Truque da Colher Japonesa</title>
-    
-    <!-- Pré-conexão para fontes para acelerar o carregamento mobile -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <style>
-        /* ==========================================================================
-           1. VARIÁVEIS DE DESIGN & CONFIGURAÇÕES RÁPIDAS DE EDALÇAS/CORES
-           ========================================================================== */
-        :root {
-            /* Cores de Fundo (Modo Escuro / Black Premium) */
-            --bg-body: #050505;
-            --bg-card: #0d0d0e;
-            --bg-card-secondary: #141416;
-            --border-color: #222226;
-            --border-highlight: #33333b;
-
-            /* Tipografia */
-            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            
-            /* Textos Base */
-            --text-primary: #ffffff;
-            --text-secondary: #c4c4cc;
-            --text-muted: #8e8e93;
-
-            /* Destaques Strategicos de Direct Response (Neon & Marca-Texto) */
-            --accent-green: #00ff66;
-            --accent-green-hover: #00cc52;
-            --accent-green-glow: rgba(0, 255, 102, 0.25);
-            
-            /* Cores de Marca-Texto (Highlight Boxes) */
-            --highlight-yellow-bg: rgba(255, 214, 10, 0.18);
-            --highlight-yellow-text: #ffd60a;
-            --highlight-purple-bg: rgba(191, 90, 242, 0.2);
-            --highlight-purple-text: #e5b8ff;
-            --highlight-green-bg: rgba(0, 255, 102, 0.15);
-            --highlight-green-text: #00ff66;
-
-            /* Urgência & Alertas */
-            --alert-bg: rgba(255, 69, 58, 0.12);
-            --alert-border: #ff453a;
-            --alert-text: #ff6961;
-
-            /* Dimensões Otimizadas para Mobile */
-            --container-width: 680px;
-            --radius-lg: 16px;
-            --radius-md: 10px;
-        }
-
-        /* CONFIGURAÇÃO RÁPIDA DE IMAGENS / PASTA FUTURA (MANTIDA) */
-        /* Para usar suas próprias imagens, basta salvá-las na pasta /assets/img/ */
-
-        /* ==========================================================================
-           2. RESET & BASE TIPOGRÁFICA MOBILE-FIRST
-           ========================================================================== */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-body);
-            color: var(--text-primary);
-            font-family: var(--font-main);
-            /* Tamanho de fonte 18px base para perfeita legibilidade no telemóvel */
-            font-size: 1.125rem; 
-            line-height: 1.65;
-            letter-spacing: -0.01em;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            padding: 12px 14px 40px 14px;
-        }
-
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-        }
-
-        /* ==========================================================================
-           3. ESTILOS DE DESTAQUES & MARCA-TEXTO (COPYWRITING HIGH-CONVERSION)
-           ========================================================================== */
-        
-        /* Marca-Texto Amarelo Ouro */
-        .hl-yellow {
-            background-color: var(--highlight-yellow-bg);
-            color: var(--highlight-yellow-text);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 800;
-            display: inline-block;
-            line-height: 1.3;
-        }
-
-        /* Marca-Texto Roxo/Lilás Sophisticated */
-        .hl-purple {
-            background-color: var(--highlight-purple-bg);
-            color: var(--highlight-purple-text);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 800;
-            display: inline-block;
-            line-height: 1.3;
-        }
-
-        /* Marca-Texto Verde Vendas/Resultados */
-        .hl-green {
-            background-color: var(--highlight-green-bg);
-            color: var(--highlight-green-text);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 800;
-            display: inline-block;
-            line-height: 1.3;
-        }
-
-        /* Palavras de Alto Impacto em Caixa Alta e Verde Neon */
-        .power-word {
-            color: var(--accent-green);
-            font-weight: 900;
-            letter-spacing: 0.02em;
-        }
-
-        .power-word-yellow {
-            color: var(--highlight-yellow-text);
-            font-weight: 900;
-            letter-spacing: 0.02em;
-        }
-
-        /* ==========================================================================
-           4. COMPONENTES VISUAIS & ESTRUTURA
-           ========================================================================== */
-
-        /* Barra de Alerta de Topo */
-        .top-alert {
-            background-color: var(--alert-bg);
-            border: 1px solid var(--alert-border);
-            color: var(--alert-text);
-            text-align: center;
-            padding: 12px 16px;
-            border-radius: var(--radius-md);
-            font-size: 0.875rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 12px rgba(255, 69, 58, 0.15);
-        }
-
-        /* Seção da Headline */
-        .headline-section {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .main-headline {
-            font-size: 1.625rem; /* Otimizado para telas pequenas */
-            font-weight: 900;
-            line-height: 1.3;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .sub-headline {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            line-height: 1.5;
-            margin-top: 12px;
-        }
-
-        /* Containers de Mídia (Espaços Estratégicos para Fotos/Vídeos) */
-        .media-placeholder {
-            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-secondary) 100%);
-            border: 2px dashed var(--border-highlight);
-            border-radius: var(--radius-lg);
-            padding: 24px 16px;
-            text-align: center;
-            margin: 28px 0;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-        }
-
-        .media-placeholder.featured {
-            border-color: var(--accent-green);
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.12);
-        }
-
-        .media-placeholder img {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--radius-md);
-            display: block;
-            margin: 0 auto;
-        }
-
-        .media-label {
-            display: block;
-            font-size: 0.8125rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .media-title {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
-
-        /* Blocos do Roteiro TSL */
-        .tsl-block {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 28px 20px;
-            margin-bottom: 24px;
-        }
-
-        .tsl-block p {
-            margin-bottom: 20px;
-            color: var(--text-secondary);
-            font-size: 1.125rem;
-        }
-
-        .tsl-block p:last-child {
-            margin-bottom: 0;
-        }
-
-        .tsl-block strong {
-            color: var(--text-primary);
-        }
-
-        /* Lista de Benefícios de Alta Conversão */
-        .benefit-card-list {
-            list-style: none;
-            margin: 24px 0;
-        }
-
-        .benefit-card-list li {
-            background-color: var(--bg-card-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 16px;
-            margin-bottom: 12px;
-            font-size: 1.0625rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .benefit-icon {
-            color: var(--accent-green);
-            font-size: 1.25rem;
-            line-height: 1;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        /* Card de Preço & Oferta Irresistível */
-        .pricing-section {
-            background: linear-gradient(180deg, var(--bg-card-secondary) 0%, var(--bg-card) 100%);
-            border: 2px solid var(--accent-green);
-            border-radius: var(--radius-lg);
-            padding: 32px 20px;
-            text-align: center;
-            margin: 32px 0 24px 0;
-            position: relative;
-            box-shadow: 0 0 30px var(--accent-green-glow);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--accent-green);
-            color: #000000;
-            font-size: 0.75rem;
-            font-weight: 900;
-            padding: 6px 18px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-
-        .price-old {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            text-decoration: line-through;
-            margin-top: 8px;
-            margin-bottom: 4px;
-        }
-
-        .price-main {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--text-primary);
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .price-main span {
-            color: var(--accent-green);
-        }
-
-        .price-subtext {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
-
-        /* ==========================================================================
-           5. BOTÕES DE AÇÃO (CTA PRINCIPAL COM ANIMAÇÃO E LINK DE RECUSA)
-           ========================================================================== */
-        .cta-container {
-            text-align: center;
-            margin: 28px 0;
-        }
-
-        .btn-cta-main {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-green);
-            color: #000000;
-            font-size: 1.25rem;
-            font-weight: 900;
-            text-decoration: none;
-            padding: 22px 18px;
-            border-radius: var(--radius-md);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 8px 25px var(--accent-green-glow);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-            
-            /* Animação Pulsante para Capturar Atenção */
-            animation: pulse-glow 2s infinite;
-        }
-
-        @keyframes pulse-glow {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.6);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta Especial Exclusiva - O Truque da Colher Japonesa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#7C3AED',
+              purpleHover: '#6D28D9',
+              purpleLight: '#F3E8FF',
+              green: '#10B981',
+              greenHover: '#059669',
             }
-            70% {
-                transform: scale(1.02);
-                box-shadow: 0 0 0 16px rgba(0, 255, 102, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 255, 102, 0);
-            }
+          }
         }
-
-        .btn-cta-main:hover, .btn-cta-main:focus {
-            background-color: var(--accent-green-hover);
-            transform: translateY(-2px);
-            outline: none;
-        }
-
-        .btn-decline {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            line-height: 1.4;
-            text-decoration: underline;
-            transition: color 0.2s ease;
-            max-width: 90%;
-        }
-
-        .btn-decline:hover {
-            color: var(--text-secondary);
-        }
-
-        /* Garantia */
-        .guarantee-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .guarantee-icon {
-            font-size: 2.25rem;
-            flex-shrink: 0;
-        }
-
-        .guarantee-content h4 {
-            font-size: 1rem;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-            font-weight: 800;
-        }
-
-        .guarantee-content p {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.75rem;
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: underline;
-        }
-
-        /* ==========================================================================
-           6. AJUSTES PARA TELAS MAIORES (DESKTOP/TABLET)
-           ========================================================================== */
-        @media (min-width: 640px) {
-            body {
-                font-size: 1.1875rem; /* ~19px no Desktop para leitura super fluida */
-                padding-top: 32px;
-            }
-
-            .main-headline {
-                font-size: 2.25rem;
-            }
-
-            .sub-headline {
-                font-size: 1.25rem;
-            }
-
-            .tsl-block {
-                padding: 36px 32px;
-            }
-
-            .price-main {
-                font-size: 3.75rem;
-            }
-
-            .btn-cta-main {
-                font-size: 1.375rem;
-            }
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    @keyframes pulse-slow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    .cta-btn {
+      animation: pulse-slow 2.2s infinite ease-in-out;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-purple-200">
 
-    <div class="container">
+  <!-- 1. O Gancho - Banner Superior -->
+  <header class="bg-brand-purple text-white py-3.5 px-4 text-center text-xs sm:text-sm font-black shadow-md tracking-wide uppercase">
+    ⚡ ESPERE! A sua encomenda do Protocolo Xô Bigode Chinês está quase a ser concluída...
+  </header>
 
-        <!-- ALERTA DE TOPO (URGÊNCIA/CHECKOUT) -->
-        <div class="top-alert">
-            ⚠️ ESPERE! A SUA ENCOMENDA AINDA NÃO FOI CONCLUÍDA. NÃO FECHE ESTA PÁGINA.
+  <main class="max-w-2xl mx-auto px-4 py-8 sm:py-12 space-y-6">
+
+    <!-- Card Principal TSL -->
+    <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-purple-100 space-y-8">
+      
+      <!-- Cabeçalho / Sub-Gancho -->
+      <header class="text-center space-y-4">
+        <span class="inline-block bg-brand-purpleLight text-brand-purple text-xs sm:text-sm font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-purple-200">
+          Aviso Importante do Pedido
+        </span>
+        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">
+          Mas antes de avançar, preciso de ser totalmente transparente contigo: <span class="text-brand-purple underline decoration-purple-300">apenas o protocolo principal não basta.</span>
+        </h1>
+      </header>
+
+      <!-- Promessa Principal -->
+      <div class="bg-purple-50 rounded-2xl p-5 border-l-4 border-brand-purple text-slate-800 text-base sm:text-lg leading-relaxed font-medium">
+        Se o teu objetivo real é <strong>rejuvenescer até 10 anos em apenas 15 dias</strong>, eliminar o inchaço matinal e devolver a firmeza absoluta ao teu rosto, tu precisas de dar o próximo passo. E eu descobri exatamente como fazer isso.
+      </div>
+
+      <hr class="border-slate-100">
+
+      <!-- 2. A Agonia -->
+      <section class="space-y-4 text-slate-700 leading-relaxed text-base sm:text-lg">
+        <p>
+          Durante anos, ao acompanhar centenas de mulheres, eu percebi um padrão frustrante: muitas começavam os exercícios faciais com toda a energia, mas viam os resultados a demorar semanas a aparecer.
+        </p>
+        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
+          <p class="font-bold text-slate-900">Sabe porquê?</p>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Porque elas aplicavam a pressão errada, faziam os movimentos sem o suporte adequado e acumulavam retenção de líquidos na zona da mandíbula e do bigode chinês que bloqueava qualquer evolução muscular.
+          </p>
+        </div>
+        <p class="text-slate-800 font-medium italic">
+          Sentires que estás a esforçar-te à frente do espelho, mas que o resultado não acompanha a velocidade que desejas, é desesperante. Parecia que faltava uma "chave secreta" para destravar o processo.
+        </p>
+      </section>
+
+      <hr class="border-slate-100">
+
+      <!-- 3. A Visão & A Solução -->
+      <section class="space-y-5 text-slate-700 leading-relaxed text-base sm:text-lg">
+        <p>
+          Foi após anos de estudo intensivo, testes laboratoriais caseiros e viagens de pesquisa sobre técnicas milenares orientais de escultura facial que eu decidi desvendar este mistério.
+        </p>
+        <p>
+          Eu queria algo simples, que qualquer mulher pudesse fazer na sua própria casa de banho, sem gastar fortunas em clínicas de estética em Lisboa ou no Porto.
+        </p>
+        
+        <!-- Bloco de Destaque do Método -->
+        <div class="bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl text-center space-y-4">
+          <span class="text-xs uppercase tracking-widest text-purple-300 font-extrabold">A Revelação Exclusiva</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">
+            "O Truque da Colher Japonesa"
+          </h2>
+          <p class="text-purple-100 text-sm sm:text-base leading-relaxed">
+            Não é apenas um e-book qualquer. É uma <strong>masterclass exclusiva</strong> onde eu pego literalmente na tua mão, através de vídeos de alta definição em ângulo milimétrico, e te ensino o passo a passo exato.
+          </p>
+          <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm text-xs sm:text-sm text-purple-200 border border-purple-500/30">
+            ✨ Utiliza a <strong>termodinâmica do metal</strong> combinada com o <strong>fluxo linfático profundo</strong> para impulsionar os teus resultados em até <span class="text-emerald-400 font-extrabold">7x mais rápido</span>.
+          </div>
         </div>
 
-        <!-- ==========================================================================
-           SEÇÃO 1: HEADLINE PRINCIPAL (O GANCHO COM DESTAQUES DE IMPACTO)
-           ========================================================================== -->
-        <header class="headline-section">
-            <h1 class="main-headline">
-                Espere! A sua encomenda do Protocolo Xô Bigode Chinês está quase a ser concluída...
-            </h1>
-            
-            <p class="sub-headline">
-                Mas antes de avançar, preciso de ser totalmente transparente contigo: <span class="hl-yellow">APENAS O PROTOCOLO PRINCIPAL NÃO BASTA.</span>
-            </p>
-        </header>
+        <p class="text-slate-800 font-medium">
+          Imagina acordar pela manhã, ir à casa de banho, pegar em duas simples colheres e, em menos de 3 minutos, ver o teu contorno facial a desenhar-se e a pele a esticar visivelmente diante dos teus olhos. É exatamente isso que vais desbloquear hoje.
+        </p>
+      </section>
 
-        <!-- ESPAÇO ESTRATÉGICO DE MÍDIA #1 (LOGO APÓS A HEADLINE PRINCIPAL) -->
-        <!-- Substitua pelo caminho da sua imagem em: /assets/img/mockup-principal.png -->
-        <div class="media-placeholder featured">
-            <span class="media-label">📷 ESPAÇO ESTRATÉGICO #1 (OBRIGATÓRIO)</span>
-            <div class="media-title">Insira aqui a Foto/Mockup do Produto "O Truque da Colher Japonesa" ou Vídeo de Vendas</div>
-            <!-- Exemplo de como usar a imagem quando você colocar na pasta: -->
-            <!-- <img src="assets/img/mockup-colher-japonesa.png" alt="O Truque da Colher Japonesa" loading="lazy"> -->
+      <hr class="border-slate-100">
+
+      <!-- 4. A Oferta e o Valor Exclusivo -->
+      <section class="bg-purple-50 rounded-2xl p-6 sm:p-8 text-center space-y-4 border border-purple-100">
+        <p class="text-slate-600 text-sm sm:text-base">
+          Nas clínicas especializadas, uma única sessão de drenagem modeladora e escultura facial custa facilmente entre <span class="line-through text-slate-400 font-semibold">45€ e 80€</span>.
+        </p>
+        <p class="text-slate-800 font-semibold text-sm sm:text-base">
+          No entanto, como já demonstraste compromisso ao adquirir o teu protocolo principal hoje, eu não vou cobrar-te esse valor.
+        </p>
+        <div class="py-2">
+          <p class="text-xs text-brand-purple font-black uppercase tracking-wider">Pagamento Único • Acesso Imediato</p>
+          <div class="text-4xl sm:text-5xl font-black text-slate-900 mt-1">
+            29€
+          </div>
+          <p class="text-xs text-slate-500 mt-1">Disponível apenas nesta página de confirmação.</p>
         </div>
+      </section>
 
-        <!-- ==========================================================================
-           SEÇÃO 2: A AGONIA & O INIMIGO COMUM (COPY DE ALTA PERSUASÃO)
-           ========================================================================== -->
-        <div class="tsl-block">
-            <p>
-                Se o teu objetivo real é <span class="hl-green"><span class="power-word">REJUVENESCER ATÉ 10 ANOS</span> EM APENAS 15 DIAS</span>, eliminar o inchaço matinal e devolver a <span class="power-word-yellow">FIRMEZA ABSOLUTA</span> ao teu rosto, tu precisas de dar o próximo passo. E eu descobri exatamente como fazer isso.
-            </p>
+      <!-- 5. Ação - Botões de Conversão Black -->
+      <section class="space-y-4 text-center pt-2">
+        <a href="#LINK_DO_CHECKOUT_UPSELL" class="cta-btn inline-block w-full py-5 px-6 bg-brand-green hover:bg-brand-greenHover text-white font-black text-base sm:text-xl rounded-2xl shadow-xl shadow-emerald-500/25 transition-all duration-200 uppercase tracking-wide leading-tight">
+          SIM! QUERO ADICIONAR O TRUQUE DA COLHER JAPONESA E IMPULSIONAR OS MEUS RESULTADOS EM 7X POR APENAS 29€
+        </a>
+        <p class="text-xs text-slate-500 font-semibold flex items-center justify-center gap-1.5">
+          <span>🔒</span> Adicionar com 1 clique à minha encomenda atual
+        </p>
 
-            <p>
-                Durante anos, ao acompanhar centenas de mulheres, eu percebi um padrão frustrante: muitas começavam os exercícios faciais com toda a energia, mas viam os resultados a demorar semanas a aparecer.
-            </p>
-
-            <p>
-                Sabe porquê? Porque elas <span class="hl-purple">aplicavam a pressão errada</span>, faziam os movimentos sem o suporte adequado e acumulavam retenção de líquidos na zona da mandíbula e do bigode chinês que <span class="power-word">BLOQUEAVA</span> qualquer evolução muscular.
-            </p>
-
-            <p>
-                Sentires que estás a esforçar-te à frente do espelho, mas que o resultado não acompanha a velocidade que desejas, é desesperante. Parecia que faltava uma <span class="hl-yellow">"CHAVE SECRETA"</span> para destravar o processo.
-            </p>
+        <!-- Link Subtil de Rejeição -->
+        <div class="pt-4">
+          <a href="#LINK_RECUSAR" class="inline-block text-xs sm:text-sm text-slate-400 hover:text-slate-600 underline transition-colors max-w-md leading-snug">
+            Não, obrigado. Prefiro continuar a tentar obter resultados sozinha, sem o método avançado de aceleração em 7x e sem o acompanhamento passo a passo.
+          </a>
         </div>
+      </section>
 
-        <!-- ESPAÇO ESTRATÉGICO DE MÍDIA #2 (ILUSTRAÇÃO DA DOR OU TÉCNICA) -->
-        <div class="media-placeholder">
-            <span class="media-label">📷 ESPAÇO ESTRATÉGICO #2</span>
-            <div class="media-title">Insira aqui Foto de Antes/Depois, Comparativo de Técnica Incorreta x Correta ou GIF Ilustrativo</div>
-        </div>
+    </article>
 
-        <!-- ==========================================================================
-           SEÇÃO 3: A VISÃO & A SOLUÇÃO (PROMESSA DE TRANSFORMAÇÃO EM 7X)
-           ========================================================================== -->
-        <div class="tsl-block">
-            <p>
-                Foi após anos de estudo intensivo, testes e pesquisas sobre técnicas milenares orientais de escultura facial que eu decidi desvendar este mistério.
-            </p>
+    <!-- Rodapé Minimalista -->
+    <footer class="text-center text-xs text-slate-400 space-y-2">
+      <div class="flex justify-center items-center gap-4 text-slate-500 font-medium">
+        <span>🔒 Compra 100% Segura</span>
+        <span>⚡ Acesso Imediato</span>
+        <span>🛡️ Garantia Incondicional</span>
+      </div>
+      <p>© 2026 Todos os direitos reservados.</p>
+    </footer>
 
-            <p>
-                Eu queria algo simples, que qualquer mulher pudesse fazer na sua própria casa de banho, sem gastar fortunas em clínicas de estética em Lisboa ou no Porto.
-            </p>
-
-            <p style="text-align: center; font-size: 1.375rem; font-weight: 900; color: var(--accent-green); margin: 28px 0;">
-                ✨ FOI ASSIM QUE NASCEU: <br>
-                <span class="hl-green" style="font-size: 1.5rem; display: inline-block; margin-top: 8px;">"O TRUQUE DA COLHER JAPONESA"</span>
-            </p>
-
-            <!-- ESPAÇO ESTRATÉGICO DE MÍDIA #3 (DEMONSTRAÇÃO DO PRODUTO/AULA) -->
-            <div class="media-placeholder">
-                <span class="media-label">📷 ESPAÇO ESTRATÉGICO #3</span>
-                <div class="media-title">Insira aqui Imagem do Curso por Dentro / Demonstração do Vídeo da Colher Japonesa</div>
-            </div>
-
-            <p>
-                Não é apenas um e-book qualquer. É uma <span class="hl-purple">MASTERCLASS EXCLUSIVA</span> onde <span class="power-word-yellow">EU PEGO LITERAMENTE NA TUA MÃO</span>, através de vídeos de alta definição em ângulo milimétrico, e te ensino o passo a passo exato.
-            </p>
-
-            <p>
-                Este truque milenar utiliza a termodinâmica do metal combinada com o fluxo linfático profundo para <span class="hl-green"><span class="power-word">IMPULSIONAR OS TEUS RESULTADOS EM ATÉ 7X MAIS RÁPIDO</span></span>.
-            </p>
-
-            <p>
-                Imagina acordar pela manhã, ir à casa de banho, pegar em duas simples colheres e, em <span class="hl-yellow">MENOS DE 3 MINUTOS</span>, ver o teu contorno facial a desenhar-se e a pele a <span class="power-word">ESTICAR VISIVELMENTE</span> diante dos teus olhos. É exatamente isso que vais desbloquear hoje.
-            </p>
-
-            <!-- LISTA DE TRANSFORMAÇÕES/O QUE ELA VAI RECEBER -->
-            <ul class="benefit-card-list">
-                <li>
-                    <span class="benefit-icon">✓</span>
-                    <div><strong>AULA PASSO A PASSO EM VÍDEO:</strong> Veja de perto a pressão e os ângulos exatos para não errar.</div>
-                </li>
-                <li>
-                    <span class="benefit-icon">✓</span>
-                    <div><strong>DRENAGEM EXPRESS DE 3 MINUTOS:</strong> Elimine o inchaço matinal das pálpebras e bochechas instantaneamente.</div>
-                </li>
-                <li>
-                    <span class="benefit-icon">✓</span>
-                    <div><strong>EFEITO LIFTING IMEDIATO:</strong> Ative a circulação profunda e potencialize o efeito do seu protocolo em até 7x.</div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- ==========================================================================
-           SEÇÃO 4: PREÇO & OFERTA IRRESISTÍVEL (29€)
-           ========================================================================== -->
-        <div class="pricing-section">
-            <div class="pricing-badge">OFERTA ÚNICA DE CONFIRMAÇÃO</div>
-            
-            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 8px;">
-                Nas clínicas especializadas, uma única sessão de drenagem modeladora e escultura facial custa facilmente entre 45€ e 80€.
-            </p>
-
-            <div class="price-old">De R$ 197,00 por apenas</div>
-            <div class="price-main">29<span>€</span></div>
-            <div class="price-subtext">Pagamento único • Acesso Imediato e Vitalício</div>
-
-            <p style="color: var(--highlight-yellow-text); font-size: 0.875rem; font-weight: 700; margin-top: 12px;">
-                ⚠️ ESTA OPORTUNIDADE NÃO ESTARÁ DISPONÍVEL POSTERIORMENTE.
-            </p>
-        </div>
-
-        <!-- ==========================================================================
-           SEÇÃO 5: BOTÕES DE AÇÃO (CTA PRINCIPAL ANIMADO + LINK DE RECUSA)
-           ========================================================================== -->
-        <div class="cta-container">
-            <!-- Botão Principal com Link Real -->
-            <a href="https://SEU-CHECKOUT-AQUI.com/upsell-colher-japonesa" class="btn-cta-main">
-                SIM! QUERO ADICIONAR O TRUQUE DA COLHER JAPONESA E IMPULSIONAR OS MEUS RESULTADOS EM 7X POR APENAS 29€
-            </a>
-
-            <!-- Link de Saída / Recusa Otimizado -->
-            <div>
-                <a href="https://SEU-CHECKOUT-AQUI.com/pagina-obrigado-ou-downsell" class="btn-decline">
-                    Não, obrigado. Prefiro continuar a tentar obter resultados sozinha, sem o método avançado de aceleração em 7x e sem o acompanhamento passo a passo.
-                </a>
-            </div>
-        </div>
-
-        <!-- ESPAÇO ESTRATÉGICO DE MÍDIA #4 (PROVA SOCIAL OU SELOS DE SEGURANÇA) -->
-        <div class="media-placeholder">
-            <span class="media-label">📷 ESPAÇO ESTRATÉGICO #4</span>
-            <div class="media-title">Insira aqui Imagem de Depoimentos de Alunas / Print de Resultados do WhatsApp</div>
-        </div>
-
-        <!-- GARANTIA -->
-        <div class="guarantee-card">
-            <div class="guarantee-icon">🛡️</div>
-            <div class="guarantee-content">
-                <h4>Garantia Incondicional de 7 Dias</h4>
-                <p>Experimente a Masterclass por 7 dias. Se sentir que a técnica não acelerou os seus resultados, reembolsamos 100% do seu dinheiro sem perguntas.</p>
-            </div>
-        </div>
-
-        <!-- RODAPÉ -->
-        <footer>
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Todos os direitos reservados.</p>
-            <p style="margin-top: 8px;">
-                <a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a>
-            </p>
-        </footer>
-
-    </div>
+  </main>
 
 </body>
 </html>
