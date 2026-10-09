@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oferta Especial Exclusiva - Upsell</title>
+  <title>Oferta Especial Exclusiva - O Truque da Colher Japonesa</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,9 +13,9 @@
             brand: {
               purple: '#7C3AED',
               purpleHover: '#6D28D9',
-              green: '#22C55E',
-              greenHover: '#16A34A',
-              dark: '#0F172A',
+              purpleLight: '#F3E8FF',
+              green: '#10B981',
+              greenHover: '#059669',
             }
           }
         }
@@ -25,101 +25,35 @@
   <style>
     @keyframes pulse-slow {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.03); }
+      50% { transform: scale(1.02); }
     }
     .cta-btn {
       animation: pulse-slow 2.5s infinite ease-in-out;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-slate-800 font-sans antialiased">
+<body class="bg-gray-50 text-slate-800 font-sans antialiased selection:bg-purple-200">
 
-  <!-- Faixa de Aviso do Topo -->
-  <header class="bg-brand-purple text-white py-3 text-center text-sm sm:text-base font-semibold shadow-md px-4">
-    ⚡ ESPERE! Sua compra ainda não foi finalizada completamente. Leia abaixo!
+  <!-- 1. O Gancho - Banner Superior -->
+  <header class="bg-brand-purple text-white py-3.5 px-4 text-center text-sm sm:text-base font-bold shadow-md tracking-wide">
+    ⚠️ ESPERE! A sua encomenda do Protocolo Xô Bigode Chinês está quase a ser concluída...
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 py-8 sm:py-12">
-    
-    <!-- Seção Principal de Headline -->
-    <section class="text-center space-y-4">
-      <span class="inline-block bg-purple-100 text-brand-purple text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-        Oferta Única & Exclusiva
-      </span>
-      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
-        Acelere seus resultados em até <span class="text-brand-purple underline decoration-purple-300">3x mais rápido</span> com esta adição especial
-      </h1>
-      <p class="text-slate-600 text-base sm:text-lg max-w-xl mx-auto">
-        Adicione este complemento ao seu pedido agora mesmo com um desconto exclusivo de <strong>50% OFF</strong> válido apenas para esta página.
-      </p>
-    </section>
+  <main class="max-w-2xl mx-auto px-4 py-8 sm:py-12 space-y-8">
 
-    <!-- Container do Vídeo de Vendas / VSL -->
-    <section class="my-8">
-      <div class="relative w-full aspect-video bg-slate-900 rounded-2xl shadow-xl overflow-hidden border-2 border-purple-200">
-        <!-- Substitua a tag iframe abaixo pelo embed do seu player (VTurb, YouTube, Vimeo, etc.) -->
-        <iframe class="w-full h-full" src="https://www.youtube.com/embed/placeholder" title="Vídeo de Vendas" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <!-- Card Principal de Oferta e Checkout -->
-    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-purple-100 space-y-6">
+    <!-- Card Principal da TSL -->
+    <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-purple-100 space-y-8">
       
-      <!-- Detalhes da Oferta -->
-      <div class="text-center space-y-2">
-        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
-          Acesso Completo ao Pacote Upsell
-        </h2>
-        <div class="flex justify-center items-baseline gap-2">
-          <span class="text-slate-400 line-through text-lg">R$ 197,00</span>
-          <span class="text-3xl sm:text-4xl font-extrabold text-brand-purple">R$ 97,00</span>
-        </div>
-        <p class="text-xs text-slate-500">Pagamento único • Sem mensalidades</p>
-      </div>
+      <!-- Cabeçalho / Sub-Gancho -->
+      <header class="text-center space-y-4">
+        <span class="inline-block bg-brand-purpleLight text-brand-purple text-xs sm:text-sm font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border border-purple-200">
+          Aviso Importante do Pedido
+        </span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+          Mas antes de avançar, preciso de ser totalmente transparente contigo: <span class="text-brand-purple underline decoration-purple-300">apenas o protocolo principal não basta.</span>
+        </h1>
+      </header>
 
-      <!-- Benefícios em Lista -->
-      <ul class="space-y-3 pt-2 text-slate-700 text-sm sm:text-base">
-        <li class="flex items-center gap-3">
-          <svg class="w-5 h-5 text-brand-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          <span><strong>Acesso Imediato:</strong> Conteúdo liberado direto no seu e-mail.</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <svg class="w-5 h-5 text-brand-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          <span><strong>Templates Prontos:</strong> Modelos para copiar e colar rapidamente.</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <svg class="w-5 h-5 text-brand-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          <span><strong>Garantia Incondicional:</strong> 7 dias para testar sem nenhum risco.</span>
-        </li>
-      </ul>
-
-      <!-- Botão de Ação Aceitar (Verde Chamativo) -->
-      <div class="pt-4 text-center space-y-3">
-        <a href="#LINK_DO_CHECKOUT_UPSELL" class="cta-btn inline-block w-full py-4 px-6 bg-brand-green hover:bg-brand-greenHover text-white font-extrabold text-lg sm:text-xl rounded-xl shadow-lg shadow-green-500/20 transition-all duration-200 uppercase tracking-wide">
-          Sim! Adicionar ao Meu Pedido por Apenas R$ 97
-        </a>
-        
-        <!-- Botão Recusar / Não Aceitar -->
-        <div>
-          <a href="#LINK_DO_OBLIQUO_RECUSAR" class="text-xs sm:text-sm text-slate-400 hover:text-slate-600 underline transition-colors">
-            Não, obrigado. Eu prefiro abrir mão desta oportunidade e pagar o valor cheio no futuro.
-          </a>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Selos de Segurança -->
-    <footer class="mt-8 text-center text-xs text-slate-400 space-y-2">
-      <div class="flex justify-center items-center gap-4 text-slate-500">
-        <span>🔒 Compra 100% Segura</span>
-        <span>⚡ Acesso Imediato</span>
-        <span>🛡️ Garantia de 7 dias</span>
-      </div>
-      <p>© 2026 Todos os direitos reservados.</p>
-    </footer>
-
-  </main>
-
-</body>
-</html>
+      <!-- Promessa Principal -->
+      <div class="bg-purple-50 rounded-2xl p-5 border-l-4 border-brand-purple text-slate-700 text-base sm:text-lg leading-relaxed">
+        Se o teu objetivo real é <strong>rejuvenescer até 10 anos em apenas 15 dias</strong>, eliminar o inchaço matinal e devolver a firme
